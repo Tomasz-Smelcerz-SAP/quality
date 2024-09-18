@@ -1,2 +1,4 @@
 github.com/Tomasz-Smelcerz-SAP/errs v0.0.0-20240918094632-c93d679a8193 h1:MHZQA0xz0ZiIl1v9yQuZ7B4J8ljx8TpZ1JFyfS7LaP4=
 github.com/Tomasz-Smelcerz-SAP/errs v0.0.0-20240918094632-c93d679a8193/go.mod h1:E9/RlKFrsYCszfUdvdpKVeucEvaP3apo0+46CmQ6WwA=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103552-90cefb16f023 h1:h3ANlC2HSgBbTJJr1czeKsNU3Hbog+/fec5g5xUeS64=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103552-90cefb16f023/go.mod h1:MSJvi00kHk1B7mTk/LR7JFv3xI7xPTmpOwQfS350R3o=

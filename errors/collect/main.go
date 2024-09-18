@@ -6,6 +6,7 @@ import (
 	"io"
 
 	"github.com/Tomasz-Smelcerz-SAP/errs"
+	"github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter"
 )
 
 var ErrWriting = fmt.Errorf("error writing")
@@ -64,7 +65,7 @@ func singletonWriter() getWriterFn {
 		if created {
 			panic("Writer already created")
 		}
-		res := NewWriter().WithCloseError(errors.New("cannot close the writer: I am too lazy"))
+		res := testwriter.NewWriter().WithCloseError(errors.New("cannot close the writer: I am too lazy"))
 		created = true
 		return res
 	}
