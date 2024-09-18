@@ -1,0 +1,12 @@
+github.com/Tomasz-Smelcerz-SAP/errs v0.0.0-20240918094632-c93d679a8193 h1:MHZQA0xz0ZiIl1v9yQuZ7B4J8ljx8TpZ1JFyfS7LaP4=
+github.com/Tomasz-Smelcerz-SAP/errs v0.0.0-20240918094632-c93d679a8193/go.mod h1:E9/RlKFrsYCszfUdvdpKVeucEvaP3apo0+46CmQ6WwA=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918135745-477d1e4cef58 h1:Zdu8UuCR0ACjlHoOA7PXRoKBhHzPCPYpqGtbydx2ewM=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918135745-477d1e4cef58/go.mod h1:BaG8B4ZzpI0dA7VVdv1T13EOo3GwQcJt0eaTqVn/1dg=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918140856-126235eec2f1 h1:D47rvB2ClA8+k0puHFj2E7Eo0LmwAt+WO0tUCuoixfY=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918140856-126235eec2f1/go.mod h1:BaG8B4ZzpI0dA7VVdv1T13EOo3GwQcJt0eaTqVn/1dg=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103552-90cefb16f023 h1:h3ANlC2HSgBbTJJr1czeKsNU3Hbog+/fec5g5xUeS64=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103552-90cefb16f023/go.mod h1:MSJvi00kHk1B7mTk/LR7JFv3xI7xPTmpOwQfS350R3o=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103706-653a73f1a600 h1:K7jNvza1CvNe8OU7AbGstlBzx3ktAQrxL+tEO2D9d4w=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918103706-653a73f1a600/go.mod h1:MSJvi00kHk1B7mTk/LR7JFv3xI7xPTmpOwQfS350R3o=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918125622-85f5b4261a14 h1:a1mIflo3lQVhLOqu0eRzvVm8GXKycfwPQQVdmuVC4I8=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/testwriter v0.0.0-20240918125622-85f5b4261a14/go.mod h1:MSJvi00kHk1B7mTk/LR7JFv3xI7xPTmpOwQfS350R3o=
