@@ -6,10 +6,11 @@ import (
 )
 
 // MyWriter is a simple WriteCloser that can be used for testing purposes.
+// It can be configured to return an error on Close() and/or Write().
 type MyWriter struct {
-	closeErr       error
-	writeErr       error
-	magicString    string
+	closeErr       error  // error to return on Close()
+	writeErr       error  // error to return on Write()
+	magicString    string // if this string is written, respond with a configured writeErr
 	respondWithErr bool
 }
 
@@ -19,11 +20,6 @@ func NewWriter() *MyWriter {
 
 func (f *MyWriter) WithCloseError(err error) *MyWriter {
 	f.closeErr = err
-	return f
-}
-
-func (f *MyWriter) WithWriteError(err error) *MyWriter {
-	f.writeErr = err
 	return f
 }
 
@@ -43,17 +39,21 @@ func (f *MyWriter) Close() error {
 }
 
 func (f *MyWriter) Write(p []byte) (n int, err error) {
-	astr := string(p)
+	if len(p) == 0 {
+		return 0, nil
+	}
 
-	fmt.Printf("[MyWriter]: Write(\"%s\")\n", astr)
+	aStr := string(p)
 
-	if len(f.magicString) > 0 && strings.Contains(astr, f.magicString) {
+	fmt.Printf("[MyWriter]: Write(\"%s\")\n", aStr)
+
+	if len(f.magicString) > 0 && strings.Contains(aStr, f.magicString) {
 		f.respondWithErr = true
 	}
 
 	if f.respondWithErr {
 		if f.writeErr != nil {
-			return 0, f.writeErr
+			return len(p) - 1, f.writeErr // pretend we wrote all but the last byte
 		}
 	}
 
