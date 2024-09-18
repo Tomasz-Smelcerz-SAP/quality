@@ -1,4 +1,4 @@
-package testwriter
+package dummy_io
 
 import (
 	"fmt"

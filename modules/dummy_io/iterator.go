@@ -4,8 +4,6 @@ import (
 	"io"
 )
 
-type GetWriterFn func() io.WriteCloser
-
 // StringIterator is an interface for reading strings.
 type StringIterator interface {
 	Next() (string, error)
