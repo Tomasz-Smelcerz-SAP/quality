@@ -17,6 +17,10 @@ type StringReader struct {
 	str   []string
 }
 
+func NewStringReader(str []string) *StringReader {
+	return &StringReader{str: str}
+}
+
 func (r *StringReader) Next() (string, error) {
 	if r.index >= len(r.str) {
 		return "", io.EOF
