@@ -8,16 +8,16 @@ import (
 )
 
 func runCollect(sIter dio.StringIterator) (int, error) {
-	fmt.Println("Classic approach isn't the best!")
+	fmt.Println("Collecting errors is better than returning them!\n")
 
 	clctr := errs.SimpleClctr{}
-	totalCharsWritten, _ := writeCollect(sIter, SingletonWriter(), &clctr)
-	return totalCharsWritten, clctr.Errors()
+	totalWrittenCnt, _ := writeCollect(sIter, SingletonWriter(), &clctr)
+	return totalWrittenCnt, clctr.Errors()
 }
 
-// writeCollect reads from a stringIterator and writes to a writer. It returns the total number of characters written.
+// writeCollect reads from a StringIterator and writes to a Writer. It returns the total number of characters written.
 // It is using errs.Collector for error handling.
-func writeCollect(reader dio.StringIterator, gwf dio.GetWriterFn, c errs.Collector) (int, errs.Ignore) {
+func writeCollect(reader dio.StringIterator, gwf GetWriterFn, c errs.Collector) (int, errs.Ignore) {
 	// Acquire a writer. This is equivalent to, say, opening a File.
 	writer := gwf()
 	// Ensure the writer is closed. Note it's a one-liner and no named return values are used.

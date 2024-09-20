@@ -8,22 +8,20 @@ import (
 )
 
 func runClassic(sIter dio.StringIterator) (int, error) {
-	fmt.Println("Classic approach is the best!")
+	fmt.Println("Classic approach is the best!\n")
 
-	totalCharsWritten, err := writeClassic(sIter, SingletonWriter())
-	return totalCharsWritten, err
+	return writeClassic(sIter, SingletonWriter())
 }
 
-// writeClassic reads from a stringIterator and writes to a writer. It returns the total number of characters written.
+// writeClassic reads from a StringIterator and writes to a Writer. It returns the total number of characters written.
 // It is using classic golang error handling style.
-func writeClassic(reader dio.StringIterator, gwf dio.GetWriterFn) (totalWrittenCnt int, err error) {
+func writeClassic(reader dio.StringIterator, gwf GetWriterFn) (totalWrittenCnt int, err error) {
 	// Acquire a writer. This is equivalent to, say, opening a File.
 	writer := gwf()
 	// Ensure the writer is closed.
 	defer func() {
-		if cErr := writer.Close(); cErr != nil {
-			err = errors.Join(err, cErr) //NOTE: Initially I made a mistake here: `err = errors.Join(cErr)` (without the second argument)
-		}
+		cErr := writer.Close()
+		err = errors.Join(err, cErr) //NOTE: Initially I made a mistake here: `err = errors.Join(cErr)` (without the second argument)
 	}()
 
 	for reader.HasNext() {
