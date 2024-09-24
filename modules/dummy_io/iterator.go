@@ -10,24 +10,35 @@ type StringIterator interface {
 	HasNext() bool
 }
 
-type StringReader struct {
-	index int
-	str   []string
+type StaticReader struct {
+	index   int
+	str     []string
+	errorOn string
+	err     error
 }
 
-func NewStringReader(str []string) *StringReader {
-	return &StringReader{str: str}
+func NewStringReader(str []string) *StaticReader {
+	return &StaticReader{str: str}
 }
 
-func (r *StringReader) Next() (string, error) {
+func (r *StaticReader) WithErrorOn(err error, val string) *StaticReader {
+	r.err = err
+	r.errorOn = val
+	return r
+}
+
+func (r *StaticReader) Next() (string, error) {
 	if r.index >= len(r.str) {
 		return "", io.EOF
 	}
-	s := r.str[r.index]
+	res := r.str[r.index]
+	if r.err != nil && res == r.errorOn {
+		return "", r.err
+	}
 	r.index++
-	return s, nil
+	return res, nil
 }
 
-func (r *StringReader) HasNext() bool {
+func (r *StaticReader) HasNext() bool {
 	return r.index < len(r.str)
 }

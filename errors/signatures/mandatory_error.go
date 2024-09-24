@@ -43,3 +43,39 @@ func (me MandatoryError) Add(another error) MandatoryError {
 type unwrapper interface {
 	Unwrap() []error
 }
+
+func AsList(e error) []error {
+	if e == nil {
+		return nil
+	}
+
+	unwrapper, ok := e.(unwrapper)
+	if ok {
+		return unwrapper.Unwrap()
+	}
+
+	return []error{e}
+}
+
+func FlatJoin(existing error, newErr error) error {
+	existingList := AsList(existing)
+	newList := AsList(newErr)
+	return errors.Join(append(existingList, newList...)...)
+}
+
+func Flatten(err error) []error {
+	if err == nil {
+		return nil
+	}
+	unwrp, ok := err.(unwrapper)
+	if ok {
+		res := []error{}
+		for _, e := range unwrp.Unwrap() {
+			res = append(res, Flatten(e)...)
+		}
+		return res
+	} else {
+		res := []error{err}
+		return res
+	}
+}
