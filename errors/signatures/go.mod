@@ -2,7 +2,7 @@ module github.com/Tomasz-Smelcerz-SAP/quality/errors/signatures
 
 go 1.22
 
-require github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918200222-60d2061f9b1c
+require github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240924223740-98e4586ebf1f
 
 require (
 	github.com/barweiss/go-tuple v1.1.2

@@ -1,5 +1,7 @@
 github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918200222-60d2061f9b1c h1:sr5F/P70H481xlr1LZoPA28/7MhtbZpOC95NVkPKdng=
 github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240918200222-60d2061f9b1c/go.mod h1:BaG8B4ZzpI0dA7VVdv1T13EOo3GwQcJt0eaTqVn/1dg=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240924223740-98e4586ebf1f h1:81bAjQchldUamUIl6BMQD0fXX42VJKoiqURudzLLIxE=
+github.com/Tomasz-Smelcerz-SAP/quality/modules/dummy_io v0.0.0-20240924223740-98e4586ebf1f/go.mod h1:WLLe+n+qvfqfvbr7xHVrddupUl6wxPsPl6UAgxKU3as=
 github.com/barweiss/go-tuple v1.1.2 h1:ul9tIW0LZ5w+Vk/Hi3X9z3JyqkD0yaVGZp+nNTLW2YE=
 github.com/barweiss/go-tuple v1.1.2/go.mod h1:SpoVilkI7ycNrIkQxcQfS1JG5A+R40sWwEUlPONlp3k=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
